@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>区块链商品回溯系统</title>
+</head>
+<style>
+    .td{width:100px;overflow:hidden}
+    .inputText{width:400px;height:200px;overflow:flex}
+</style>
+<body>
+<div>
+    <div>
+        <h1>区块链商品回溯系统</h1>
+    </div>
+    {% if response2 %}
+    <div>
+        <h2>显示商品信息</h2>
+    </div>
+    <div>
+        <table width="400" border="1">
+            <tr>
+                <td class="td"><p>产品编号：<span>{{response1}}</span></p></td>
+                <td class="td"><p>订单编号：<span>{{response2}}</span></p></td>
+            </tr>
+            <tr>
+                <td class="td"><p>生产商名称：<span>{{response3}}</span></p></td>
+                <td class="td"><p>生产时间：<span>{{response4}}</span></p></td>
+            </tr>
+            <tr>
+                <td class="td"><p>中转站名称：<span>{{response5}}</span></p></td>
+                <td class="td"><p>开始运输时间：<span>{{response6}}</span></p></td>
+            </tr>
+            <tr>
+                <td class="td"><p>销售商名称：<span>{{response7}}</span></p></td>
+                <td class="td"><p>到货时间：<span>{{response8}}</span></p></td>
+            </tr>
+        </table>
+    </div>
+
+    {% else %}
+    <p>No product matched your search criteria.</p>
+    {% endif %}
+</div>
+
+<div class="inputText" align="center">
+    <div>
+        <p>商品信息反馈：</p>
+    </div>
+    <div>
+        <input type="text" class="inputText">
+    </div>
+    <div align="right">
+        <button>提交</button>
+    </div>
+</div>
+</body>
+</html>
