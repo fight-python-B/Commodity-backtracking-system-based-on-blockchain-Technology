@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批发订单</title>
+</head>
+<body>
+<h1>这里是批发订单</h1>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>订单编号</th>
+                    <th>批发商品名</th>
+                    <th>批发数量</th>
+                    <th>生产商名称</th>
+                    <th>批发时间</th>
+                    <th>生产地址</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in order_list%}
+                    <tr>
+                        <td>{{ i.pur_ordernum }}</td>
+                        <td>{{ i.pur_goodsname }}</td>
+                        <td>{{ i.pur_quantity }}</td>
+                        <td>{{ i.productname }}</td>
+                        <td>{{ i.pur_time }}</td>
+                        <td>{{ i.productad }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

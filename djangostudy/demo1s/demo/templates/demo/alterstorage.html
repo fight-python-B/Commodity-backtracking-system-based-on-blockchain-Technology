@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改库存</title>
+</head>
+<body>
+<h1>在这里修改库存</h1>
+<form action=" {% url 'demo:alterhandle' %}" method="post">
+    {% csrf_token %}
+    商品名称：<input type="text" name="a_goodsname"><br>
+    库存数量:<input type="number" name="a_quantity"><br>
+    生产商名称：<input type="text" name="a_productname"><br>
+    仓库号：<input type="text" name="a_storage"><br>
+    <input type="submit" value="确认修改">
+</form>
+</body>
+</html>

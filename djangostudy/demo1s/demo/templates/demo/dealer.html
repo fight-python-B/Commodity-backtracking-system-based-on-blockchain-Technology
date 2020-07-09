@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dealer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .area {
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        aside {
+            min-width: 200px;
+            grid-area: aside;
+        }
+
+        article {
+            grid-area: article;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        .container {
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: 1fr 4fr;
+            grid-template-areas: "header header" "aside article" "footer footer";
+        }
+        /* ----------- 上导航 ---------------- */
+        header > nav > ul {
+            display: flex;
+            background: #333;
+            list-style: none;
+        }
+        header > nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 15px 25px;
+        }
+        header > nav a:hover {
+            background-color: #111;
+        }
+        header > nav .right {
+            margin-left: auto;
+        }
+        /* ------------ 侧边栏 ---------------- */
+        .sidebar {
+            background: #f1f1f1;
+        }
+        .sidebar > h2 {
+            background: #3185bf;
+            color: white;
+            padding: 50px 20px;
+        }
+        .sidebar a{
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 30px 20px;
+            transition: transform 0.5s;
+        }
+        .sidebar a:hover {
+            background: #03a9f4;
+            color: white;
+            transform: scale(1.1);
+        }
+        /* --------响应式布局 ----------------- */
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-areas: "header" "aside" "article" "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="area">
+        <nav>
+            <ul>
+                <li><a href="#">主页</a></li>
+                <li class="right"><a href="#">个人信息</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="area">
+        <div class="sidebar">
+            <h2>经销商</h2>
+            <ul>
+                <li><a href="/search_storage/">查询库存</a></li>
+                <li><a href="/alter_storage/">修改库存</a></li>
+                <li><a href="/purchase/">批发商品</a></li>
+                <li><a href="/pur_order/">查看批发订单</a></li>
+                <li><a href="/sell_order/">查看销售订单</a></li>
+            </ul>
+        </div>
+    </aside>
+    <article class="area">
+        <img src="1.jpg">
+    </article>
+    <footer class="area">
+        基于区块链的商品溯源系统
+    </footer>
+</div>
+</body>
+</html>

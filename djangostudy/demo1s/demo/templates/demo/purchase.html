@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批发商品</title>
+</head>
+<body>
+<h1>在这里批发商品</h1>
+<form action=" {% url 'demo:purhandle' %}" method="post">
+    {% csrf_token %}
+    订单编号：<input type="text" name="a_ordernum"><br>
+    商品名称：<input type="text" name="a_goodsname"><br>
+    订购数量:<input type="number" name="a_quantity"><br>
+    生产商名称：<input type="text" name="a_productname"><br>
+    购买时间<input type="datetime-local" name="a_time"><br>
+    生产地址：<input type="text" name="a_productad"><br>
+    <input type="submit" value="提交订单">
+</form>
+</body>
+</html>

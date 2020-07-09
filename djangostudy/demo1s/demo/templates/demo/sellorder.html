@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>销售订单</title>
+</head>
+<body>
+<h1>这里是销售订单</h1>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>订单编号</th>
+                    <th>销售商品名</th>
+                    <th>销售数量</th>
+                    <th>零售商名称</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in order_list%}
+                    <tr>
+                        <td>{{ i.sell_ordernum }}</td>
+                        <td>{{ i.sell_goodsname }}</td>
+                        <td>{{ i.sell_quantity }}</td>
+                        <td>{{ i.retailername }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
